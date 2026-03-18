@@ -6,7 +6,7 @@
     <title>Tanuki Background</title>
     <style>
       :root {
-        color-scheme: dark;
+        color-scheme: light dark;
       }
 
       html,
@@ -16,11 +16,18 @@
       }
 
       body {
-        background-color: #0f1220;
-        background-image: url("tanuki_blush.gif"), linear-gradient(#0f1220, #0f1220);
-        background-repeat: repeat, no-repeat;
-        background-size: 200px auto, cover;
-        background-blend-mode: multiply;
+        /* Warm off-white helps darker tanuki tones stand out in light mode. */
+        background-color: #f6f1e6;
+        background-image: url("tanuki_blush_transparent.gif");
+        background-repeat: repeat;
+        background-size: 200px auto;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          /* Deep blue-gray gives strong contrast without crushing details. */
+          background-color: #111629;
+        }
       }
     </style>
   </head>
