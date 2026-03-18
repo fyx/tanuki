@@ -27,6 +27,28 @@
         body {
           /* Deep blue-gray gives strong contrast without crushing details. */
           background-color: #111629;
+          background-image: none;
+          position: relative;
+          isolation: isolate;
+        }
+
+        body::before {
+          content: "";
+          position: fixed;
+          inset: 0;
+          background-image: url("tanuki_blush_transparent.gif");
+          background-repeat: repeat;
+          background-size: 200px auto;
+          /* Lift dark tones to soften baked-in shadow in the GIF. */
+          filter: brightness(1.12) contrast(0.9) saturate(1.04);
+          opacity: 0.97;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        body > * {
+          position: relative;
+          z-index: 1;
         }
       }
     </style>
